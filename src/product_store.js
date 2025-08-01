@@ -8,6 +8,10 @@ const useCatalog = create((set) => ({
 		next_page: null
 	},
 	setPageInfo: (value) => set({ pageInfo: value }),
+	isLoading: false,
+	setIsLoading: (value) => set({isLoading: value})
 }));
 
-export { useCatalog };
+export {useCatalog};
+
+
