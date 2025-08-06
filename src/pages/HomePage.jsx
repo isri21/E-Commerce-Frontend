@@ -1,16 +1,13 @@
-import { ListItem } from "./ListItem";
-import { useCatalog } from "../product_store";
+import { ListItem } from "../features/home_page/ListItem";
+import { useCatalog } from "../features/home_page/product_store";
 import { useEffect } from "react";
-import PaginationCustom from "./Pagination";
-import NavBar from "../components/NavBar";
+import PaginationCustom from "../features/home_page/Pagination";
+import NavBar from "../components/shared/NavBar";
 
 export default function Browse() {
-
-
 	const { product, setProduct, setPageInfo, isLoading, setIsLoading } =
 		useCatalog();
 
-	
 	useEffect(() => {
 		try {
 			async function getProducts() {
@@ -27,7 +24,6 @@ export default function Browse() {
 			console.log(error.message);
 		}
 	}, []);
-
 
 	return (
 		<div className="font-[Consolas]">

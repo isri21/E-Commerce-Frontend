@@ -1,13 +1,13 @@
 import { Navigate } from "react-router-dom";
-import NavBar from "../NavBar";
+import NavBar from "../components/shared/NavBar";
 import { useEffect } from "react";
-import useProfile from "./profileStore";
-import useAuth from "../auth_components/auth_store";
-import ProfileDetails from "./ProfileDetails";
+import useProfile from "../features/accountComponents/profileStore";
+import useAuth from "../features/auth_components/auth_store";
+import ProfileDetails from "../features/accountComponents/ProfileDetails";
 
 function Profile() {
-	const {token} = useAuth()
-	const {isLoading, getAccount } = useProfile();
+	const { token } = useAuth();
+	const { isLoading, getAccount } = useProfile();
 	useEffect(() => {
 		getAccount(token);
 	}, []);
@@ -15,8 +15,6 @@ function Profile() {
 	if (token === null) {
 		return <Navigate to="/login" />;
 	}
-
-	
 
 	if (isLoading) {
 		return (

@@ -10,10 +10,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import useProfile from "./profileStore";
-import useAuth from "../auth_components/auth_store";
+import useProfile from "../features/accountComponents/profileStore";
+import useAuth from "../features/auth_components/auth_store";
 import { useState } from "react";
-import useUpdateProfile from "./updateProfile";
+import useUpdateProfile from "../features/accountComponents/updateProfile";
 
 export default function EditProfile({ className, ...props }) {
 	const { token } = useAuth();

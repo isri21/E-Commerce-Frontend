@@ -7,7 +7,7 @@ import {
 	PaginationNext,
 	PaginationPrevious,
 } from "@/components/ui/pagination";
-import {useCatalog} from "../product_store"
+import {useCatalog} from "../home_page/product_store"
 
 export default function PaginationCustom() {
 	const pageInfo = useCatalog((state) => state.pageInfo)
